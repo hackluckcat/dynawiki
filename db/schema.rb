@@ -15,12 +15,10 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_19_162503) do
   enable_extension "pg_catalog.plpgsql"
 
   create_table "languages", force: :cascade do |t|
-    t.string "name", null: false
     t.string "code", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["code"], name: "index_languages_on_code", unique: true
-    t.index ["name"], name: "index_languages_on_name", unique: true
   end
 
   create_table "pages", force: :cascade do |t|
