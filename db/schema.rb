@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_19_160946) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_19_161849) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -22,4 +22,16 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_19_160946) do
     t.index ["code"], name: "index_languages_on_code", unique: true
     t.index ["name"], name: "index_languages_on_name", unique: true
   end
+
+  create_table "pages", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "body"
+    t.bigint "language_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_pages_on_language_id"
+    t.index ["title"], name: "index_pages_on_title", unique: true
+  end
+
+  add_foreign_key "pages", "languages"
 end

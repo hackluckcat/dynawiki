@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+Dog:
+  title: Dog
+  body: Dogs are animals.
+  language: en
+
+Cat:
+  title: Cat
+  body: Cats are animals.
+  language: en
+
+犬:
+  title: 犬
+  body: 犬は動物です。
+  language: ja
+
+猫:
+  title: 猫
+  body: 猫は動物です。
+  language: ja
