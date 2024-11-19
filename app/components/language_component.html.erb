@@ -1,0 +1,9 @@
+<% if @current == @language %>
+  <span>
+    <%= t(@language) %>
+  </span>
+<% else %>
+  <a href="<%= language_path(code: @language) %>">
+    <%= t(@language) %>
+  </a>
+<% end %>

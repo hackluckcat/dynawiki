@@ -1,2 +1,5 @@
-<%= t(language.code) %>
-
+<%= render LanguageComponent.with_collection(
+  language_codes,
+  current: language.code,
+  spacer_component: LanguageSpacerComponent.new
+) %>

@@ -4,10 +4,14 @@ class ApplicationController < ActionController::Base
 
   before_action :set_locale
 
-  helper_method :language
+  helper_method :language, :language_codes
 
-  def language
+  private def language
     @language ||= Language.find_by(code: params[:code])
+  end
+
+  private def language_codes
+    @language_codes ||= Language.pluck(:code)
   end
 
   private def set_locale

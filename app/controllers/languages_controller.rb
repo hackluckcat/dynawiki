@@ -2,7 +2,7 @@ class LanguagesController < ApplicationController
   before_action :set_locale, except: :index
 
   def index
-    if preferred_language.in?(Language.pluck(:code))
+    if preferred_language.in?(language_codes)
       redirect_to "/#{preferred_language}"
     else
       redirect_to "/en"
