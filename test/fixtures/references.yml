@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+dog_page_on_wikipedia:
+  title: Dog - Wikipedia
+  url: "https://en.wikipedia.org/wiki/Dog"
+  base_url: "https://en.wikipedia.org"
+  page: Dog
+
+dog_history:
+  title: Dog History
+  url: "https://example.com/dog_history"
+  base_url: "https://example.com"
+  page: Dog

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_19_161849) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_19_162503) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -33,5 +33,17 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_19_161849) do
     t.index ["title"], name: "index_pages_on_title", unique: true
   end
 
+  create_table "references", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "url", null: false
+    t.string "base_url", null: false
+    t.string "image_url"
+    t.bigint "page_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["page_id"], name: "index_references_on_page_id"
+  end
+
   add_foreign_key "pages", "languages"
+  add_foreign_key "references", "pages"
 end
