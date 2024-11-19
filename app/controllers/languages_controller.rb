@@ -1,5 +1,5 @@
 class LanguagesController < ApplicationController
-  skip_before_action :set_locale, except: :index
+  before_action :set_locale, except: :index
 
   def index
     if preferred_language.in?(Language.pluck(:code))
