@@ -53,7 +53,13 @@ group :development, :test do
 end
 
 group :development do
-  gem 'pry', '~> 0.15.0'
+  gem "pry", "~> 0.15.0"
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+
+  gem "lookbook"
+
+  gem "listen"
+
+  gem "actioncable"
 end
