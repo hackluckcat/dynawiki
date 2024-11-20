@@ -1,5 +1,9 @@
-<%= render LanguageComponent.with_collection(
-  language_codes,
-  current: language.code,
-  spacer_component: LanguageSpacerComponent.new
-) %>
+<h1><%= t("dynawiki") %></h1>
+
+<footer>
+  <%= render LanguageComponent.with_collection(
+    language_codes,
+    current: language.code,
+    spacer_component: LanguageSpacerComponent.new
+  ) %>
+</footer>
