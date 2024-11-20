@@ -1,0 +1,8 @@
+<%= render(
+  LanguageComponent.with_collection(
+    %i[en ja],
+    current: :en,
+    spacer_component: LanguageSpacerComponent.new
+  )
+) %>
+
