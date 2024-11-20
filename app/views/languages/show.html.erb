@@ -1,5 +1,9 @@
 <h1><%= t("dynawiki") %></h1>
 
+<form data-controller="search" data-action="submit->search#submit" data-search-locale-value="<%= language.code %>">
+  <input type="search" data-search-target="field">
+</form>
+
 <footer>
   <%= render LanguageComponent.with_collection(
     language_codes,
