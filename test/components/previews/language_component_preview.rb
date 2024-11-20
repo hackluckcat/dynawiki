@@ -6,11 +6,11 @@ class LanguageComponentPreview < ViewComponent::Preview
   def current
     render(LanguageComponent.new(language: :en, current: :en))
   end
-  
+
   def collection
     render(
       LanguageComponent.with_collection(
-        %i(en ja),
+        %i[en ja],
         current: :en,
         spacer_component: LanguageSpacerComponent.new
       )
