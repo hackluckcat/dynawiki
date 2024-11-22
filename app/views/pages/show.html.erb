@@ -7,7 +7,13 @@
 </div>
 
 <div class="py-4">
-  <div class="prose bg-white p-8 w-full max-w-none animate-fade transition !text-gray-600 rounded-lg shadow border border-gray-50">
+  <div
+    class="prose bg-white p-8 w-full max-w-none animate-fade transition !text-gray-600 rounded-lg shadow border border-gray-50"
+    data-controller="jump"
+    data-action="mouseup->jump#select touchend->jump#select touchmove->jump#hideMneu"
+    data-jump-lang-value="<%= @page.language.code %>"
+    data-jump-title-value="<%= @page.title %>"
+  >
     <div id="body">
       <% if @page.body %>
         <%= render "pages/body", body: @page.body %>
@@ -21,6 +27,27 @@
           </div>
         </div>
       <% end %>
+    </div>
+
+    <div
+      data-jump-target="menu"
+      class="absolute bg-slate-100 p-1 bg-opacity-90 shadow-lg border border-slate-300 rounded animate-fade transition"
+      style="visibility: hidden;"
+    >
+      <a 
+        data-turbo="false"
+        data-jump-target="jump"
+        class="block text-sm py-1 px-2 rounded hover:bg-blue-500 hover:text-white no-underline"
+      >
+        <%= t("jump") %>
+      </a>
+      <a
+        data-turbo="false"
+        data-jump-target="dig"
+        class="block text-sm py-1 px-2 rounded hover:bg-blue-500 hover:text-white no-underline"
+      >
+        <%= t("dig") %>
+      </a>
     </div>
   </div>
 </div>

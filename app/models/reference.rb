@@ -7,7 +7,7 @@ class Reference < ApplicationRecord
     body = doc.text.strip
     body = body.gsub(/\s+/, " ")
     body = body.gsub(/\n\s*\n/, "\n")
-    title = doc.at("title").text
+    title = doc.at("title")&.text
     uri = URI.parse(url)
     base_url = "#{uri.scheme}://#{uri.host}"
     icon = doc.at('[rel="icon"]')
