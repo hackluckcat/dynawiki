@@ -1,10 +1,26 @@
-<%= @page.title %>
+<%= turbo_stream_from dom_id(@page) %>
 
-<%= turbo_stream_from :page %>
-
-<div id="status">
-  <%= t("searching") %>
+<div id="references" class="sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+  <% @page.references.each do |reference| %>
+    <%= render "references/item", reference: %>
+  <% end %>
 </div>
 
-<div id="references">
+<div class="py-4">
+  <div class="prose bg-white p-8 w-full max-w-none animate-fade transition !text-gray-600 rounded-lg shadow border border-gray-50">
+    <div id="body">
+      <% if @page.body %>
+        <%= render "pages/body", body: @page.body %>
+      <% else %>
+        <div class="gap-3 flex flex-col">
+          <div class="rounded-lg bg-gray-100 h-4 w-full"></div>
+          <div class="rounded-lg bg-gray-100 h-4 w-full"></div>
+          <div class="flex gap-4">
+            <div class="w-2/3 rounded-lg bg-gray-100 h-4"></div>
+            <div class="rounded-lg bg-gray-100 h-4 w-1/3"></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>

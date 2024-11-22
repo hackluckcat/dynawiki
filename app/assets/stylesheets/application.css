@@ -8,3 +8,7 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+body {
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+}

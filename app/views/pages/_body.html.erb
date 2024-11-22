@@ -1,0 +1,5 @@
+<%= Redcarpet::Markdown.new(
+  Redcarpet::Render::HTML.new(filter_html: false),
+  autolink: true,
+  tables: true
+).render(body || "").html_safe %>

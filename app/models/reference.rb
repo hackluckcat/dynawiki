@@ -11,7 +11,7 @@ class Reference < ApplicationRecord
     uri = URI.parse(url)
     base_url = "#{uri.scheme}://#{uri.host}"
     icon = doc.at('[rel="icon"]')
-    image_url = icon ? "#{base_url}#{icon["href"]}" : ""
+    image_url = icon ? icon["href"].match("http") ? icon["href"] : "#{base_url}#{icon["href"]}" : ""
     new(title:, body:, url:, base_url:, image_url:)
   end
 end

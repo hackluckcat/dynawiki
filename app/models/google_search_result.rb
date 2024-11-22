@@ -10,11 +10,13 @@ class GoogleSearchResult
   def initialize(
     query:,
     key: ENV["GOOGLE_SEARCH_KEY"],
-    cx: ENV["GOOGLE_SEARCH_ENGINE"]
+    cx: ENV["GOOGLE_SEARCH_ENGINE"],
+    lang: :en
   )
     @query = query
     @key = key
     @cx = cx
+    @lang = lang
   end
 
   def urls(
@@ -51,9 +53,10 @@ class GoogleSearchResult
   private def params
     URI.encode_www_form(
       [
-        [ "q", CGI.escape(@query) ],
+        [ "q", @query ],
         [ "key", @key ],
-        [ "cx", @cx ]
+        [ "cx", @cx ],
+        [ "lr", "lang_#{@lang}" ]
       ]
     )
   end
