@@ -1,12 +1,12 @@
-class PageReferenceSearch
+class GoogleSearchUrl
   BASE_URL = "https://www.googleapis.com/customsearch/v1"
 
   def initialize(
-    page:,
+    query:,
     key: ENV["GOOGLE_SEARCH_KEY"],
     cx: ENV["GOOGLE_SEARCH_ENGINE"]
   )
-    @page = page
+    @query = query
     @key = key
     @cx = cx
   end
@@ -20,9 +20,9 @@ class PageReferenceSearch
   private def query
     URI.encode_www_form(
       [
-        [ "q", CGI.escape(@page.title) ],
+        [ "q", CGI.escape(@query) ],
         [ "key", @key ],
-        [ "cx", @engine ]
+        [ "cx", @cx ]
       ]
     )
   end

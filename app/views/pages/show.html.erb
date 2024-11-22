@@ -1,1 +1,7 @@
 <%= @page.title %>
+
+<%= turbo_stream_from :page %>
+
+<div id="status">
+  <%= t("searching") %>
+</div>
