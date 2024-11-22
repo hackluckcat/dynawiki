@@ -5,9 +5,11 @@ dog_page_on_wikipedia:
   url: "https://en.wikipedia.org/wiki/Dog"
   base_url: "https://en.wikipedia.org"
   page: Dog
+  body: Dog is beautiful.
 
 dog_history:
   title: Dog History
   url: "https://example.com/dog_history"
   base_url: "https://example.com"
   page: Dog
+  body: Dog and Human.
