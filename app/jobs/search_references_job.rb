@@ -11,8 +11,13 @@ class SearchReferencesJob < ApplicationJob
     page = Page.find(page_id)
     urls = GoogleSearchResult.new(query: page.title, lang: page.language.code).urls
     page.references.destroy_all
-    urls[..3].each do |url|
-      html_content = URI.open(url)
+    read = 0
+    urls.each do |url|
+      if read > 4
+        break
+      end
+
+      html_content = URI.open(url, read_timeout: 3)
       reference = Reference.from_html(html_content:, url:)
       page.references << reference
       Turbo::StreamsChannel.broadcast_append_to(
@@ -21,6 +26,7 @@ class SearchReferencesJob < ApplicationJob
         partial: "references/item",
         locals: { reference: }
       )
+      read += 1
     rescue => e
       logger.error e
     end
