@@ -1,13 +1,22 @@
-<h1><%= t("dynawiki") %></h1>
+<div class="h-[70vh] flex flex-col items-center justify-center">
+  <h1 class="text-center font-bold text-3xl">
+    <%= t("dynawiki") %>
+  </h1>
 
-<form data-controller="search" data-action="submit->search#submit" data-search-locale-value="<%= language.code %>">
-  <input type="search" data-search-target="field">
-</form>
+  <form
+    data-controller="search"
+    data-action="submit->search#submit"
+    data-search-locale-value="<%= language.code %>"
+    class="py-4 w-full flex justify-center"
+  >
+    <input type="search" data-search-target="field" class="border border-gray-50 shadow focus:ring-0 focus:outline-none focus:border-gray-50 rounded-lg min-w-[400px] mx-auto" placeholder="<%= t("search") %>">
+  </form>
 
-<footer>
-  <%= render LanguageComponent.with_collection(
-    language_codes,
-    current: language.code,
-    spacer_component: LanguageSpacerComponent.new
-  ) %>
-</footer>
+  <footer class="flex justify-center">
+    <%= render LanguageComponent.with_collection(
+      language_codes,
+      current: language.code,
+      spacer_component: LanguageSpacerComponent.new
+    ) %>
+  </footer>
+</div>
