@@ -27,8 +27,8 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_22_095745) do
     t.bigint "language_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["language_id", "title"], name: "index_pages_on_language_id_and_title", unique: true
     t.index ["language_id"], name: "index_pages_on_language_id"
-    t.index ["title"], name: "index_pages_on_title", unique: true
   end
 
   create_table "references", force: :cascade do |t|
