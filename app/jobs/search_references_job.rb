@@ -11,7 +11,7 @@ class SearchReferencesJob < ApplicationJob
     page = Page.find(page_id)
     urls = GoogleSearchResult.new(query: page.title, lang: page.language.code).urls
     page.references.destroy_all
-    read = 0
+    read = 1
     urls.each do |url|
       if read > 4
         break

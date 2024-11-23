@@ -1,3 +1,14 @@
+<form
+  data-controller="search"
+  data-action="submit->search#submit"
+  data-search-locale-value="<%= language.code %>"
+  class="py-4 w-full flex justify-center"
+>
+<input type="search" value="<%= @page.title %>" data-search-target="field" class="border border-gray-50 shadow focus:ring-0 focus:outline-none focus:border-gray-50 rounded-lg min-w-[400px] mx-auto" placeholder="<%= t("search") %>">
+</form>
+
+
+
 <%= turbo_stream_from dom_id(@page) %>
 
 <div id="references" class="sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">

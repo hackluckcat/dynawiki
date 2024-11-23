@@ -7,6 +7,6 @@ export default class extends Controller {
 
   submit (e) {
     e.preventDefault()
-    window.location.assign(`/${this.localeValue}/${this.fieldTarget.value}`)
+    window.location.assign(`/${this.localeValue}/wiki/${this.fieldTarget.value}`)
   }
 }
