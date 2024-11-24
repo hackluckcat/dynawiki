@@ -13,7 +13,7 @@
     <input type="search" data-search-target="field" class="border border-gray-50 shadow focus:ring-0 focus:outline-none focus:border-gray-50 rounded-lg min-w-[400px] mx-auto" placeholder="<%= t("search") %>">
   </form>
 
-  <footer class="flex justify-center fixed bottom-4 text-sm">
+  <footer class="flex justify-center mt-3 text-sm gap-x-2">
     <%= render LanguageComponent.with_collection(
       language_codes,
       current: language.code,
