@@ -19,17 +19,7 @@ class GoogleSearchResult
     @lang = lang
   end
 
-  def urls(
-    limit: 4,
-    exclude: %w[
-      apps.apple.com
-      youtube
-      podcast
-      instagram
-      x.com
-      twitter
-    ]
-  )
+  def urls(limit: 4)
     response = Net::HTTP.get_response(endpoint)
     unless response.is_a?(Net::HTTPSuccess)
       raise SearchError
@@ -39,7 +29,7 @@ class GoogleSearchResult
     result = result["items"].map { _1["link"] }
     result = result.filter do |r|
       uri = URI.parse(r)
-      uri.scheme == "https" && !uri.host.match?(/(#{exclude.join("|")})/)
+      uri.scheme == "https"
     end
     result = result[..limit]
   end
