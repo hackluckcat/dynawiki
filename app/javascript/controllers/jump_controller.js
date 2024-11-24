@@ -6,7 +6,13 @@ export default class extends Controller {
 
   currentSelection = ""
 
-  hideMenu() {
+  hideMenu(e) {
+    if (e.target === this.jumpTarget) {
+      return
+    }
+    if (e.target === this.digTarget) {
+      return
+    }
     this.menuTarget.style.visibility = "hidden";
   }
 
