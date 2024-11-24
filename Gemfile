@@ -71,3 +71,7 @@ gem "redcarpet", "~> 3.6"
 gem "ruby-openai", "~> 7.3"
 
 gem "anthropic", "~> 0.3.2"
+
+gem "dockerfile-rails", ">= 1.6", :group => :development
+
+gem "redis", "~> 5.3"
