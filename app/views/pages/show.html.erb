@@ -2,9 +2,9 @@
   <%= "#{@page.title} - Dynawiki" %>
 <% end %>
 
-<header class="flex mb-4">
-  <a href="<%= language_path(code: language.code) %>" class="flex gap-2 items-center font-bold">
-    <img src="/icon.png" class="w-5 h-5" />
+<header class="sm:flex mb-4 block items-center">
+  <a href="<%= language_path(code: language.code) %>" class="flex gap-2 items-center font-bold mb-2 sm:mb-0">
+    <img src="/icon.png" class="w-6 h-6" />
   </a>
   <form
     data-controller="search"
@@ -12,7 +12,7 @@
     data-search-locale-value="<%= language.code %>"
     class="w-full flex justify-center"
   >
-    <input type="search" value="<%= @page.title %>" data-search-target="field" class="border border-gray-50 shadow focus:ring-0 focus:outline-none focus:border-gray-50 rounded-lg min-w-[400px] mx-auto" placeholder="<%= t("search") %>">
+    <input type="search" value="<%= @page.title %>" data-search-target="field" class="border border-gray-50 shadow focus:ring-0 focus:outline-none focus:border-gray-50 rounded-lg w-full max-w-[400px] mx-auto" placeholder="<%= t("search") %>">
   </form>
 </header>
 
@@ -26,7 +26,7 @@
   <% end %>
 </div>
 
-<div class="py-4">
+<div class="sm:py-4">
   <div
     class="prose bg-white p-8 w-full max-w-none animate-fade transition !text-gray-600 rounded-lg shadow border border-gray-50"
     data-controller="jump"
