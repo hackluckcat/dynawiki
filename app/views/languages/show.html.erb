@@ -12,13 +12,13 @@
     <input type="search" data-search-target="field" class="border border-gray-50 shadow focus:ring-0 focus:outline-none focus:border-gray-50 rounded-lg min-w-[400px] mx-auto" placeholder="<%= t("search") %>">
   </form>
 
-  <footer class="flex justify-center">
+  <footer class="flex justify-center fixed bottom-4 text-sm">
     <%= render LanguageComponent.with_collection(
       language_codes,
       current: language.code,
       spacer_component: LanguageSpacerComponent.new
     ) %>
     <div>/</div>
-    <a href="<%= legals_path(code: language.code) %>"><%= t("legal") %></a>
+    <a href="<%= legals_path(code: language.code) %>" class="hover:text-gray-400 transition"><%= t("legal") %></a>
   </footer>
 </div>

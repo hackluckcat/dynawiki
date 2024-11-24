@@ -1,9 +1,9 @@
 <% if @current == @language %>
-  <span>
+  <span class="font-bold">
     <%= t(@language) %>
   </span>
 <% else %>
-  <a href="<%= language_path(code: @language) %>">
+  <a href="<%= language_path(code: @language) %>" class="hover:text-gray-400 transition">
     <%= t(@language) %>
   </a>
 <% end %>
