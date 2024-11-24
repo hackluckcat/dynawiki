@@ -1,0 +1,2 @@
+module LegalsHelper
+end

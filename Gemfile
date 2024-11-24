@@ -75,3 +75,5 @@ gem "anthropic", "~> 0.3.2"
 gem "dockerfile-rails", ">= 1.6", :group => :development
 
 gem "redis", "~> 5.3"
+
+gem "commonmarker", "~> 1.1"

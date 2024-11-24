@@ -18,5 +18,7 @@
       current: language.code,
       spacer_component: LanguageSpacerComponent.new
     ) %>
+    <div>/</div>
+    <a href="<%= legals_path(code: language.code) %>"><%= t("legal") %></a>
   </footer>
 </div>
