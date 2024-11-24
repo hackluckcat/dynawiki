@@ -66,7 +66,6 @@ group :development do
   gem "actioncable"
 end
 
-gem "redcarpet", "~> 3.6"
 
 gem "ruby-openai", "~> 7.3"
 

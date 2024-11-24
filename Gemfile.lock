@@ -420,7 +420,6 @@ DEPENDENCIES
   pry (~> 0.15.0)
   puma (>= 5.0)
   rails (~> 8.0.0)
-  redcarpet (~> 3.6)
   redis (~> 5.3)
   rubocop-rails-omakase
   ruby-openai (~> 7.3)
