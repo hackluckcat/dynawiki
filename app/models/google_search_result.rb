@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'net/http'    
+require 'net/http'
 
 class GoogleSearchResult
   class SearchError < StandardError; end

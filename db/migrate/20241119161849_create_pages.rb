@@ -7,6 +7,6 @@ class CreatePages < ActiveRecord::Migration[8.0]
 
       t.timestamps
     end
-    add_index :pages, [:language_id, :title], unique: true
+    add_index :pages, [ :language_id, :title ], unique: true
   end
 end
