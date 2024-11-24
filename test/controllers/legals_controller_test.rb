@@ -1,8 +1,8 @@
-require "test_helper"
+# frozen_string_literal: true
 
 class LegalsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get legals_index_url
+    get legals_url(code: :en)
     assert_response :success
   end
 end
