@@ -1,3 +1,7 @@
+<%= content_for(:title) do %>
+  <%= "#{@page.title} - Dynawiki" %>
+<% end %>
+
 <form
   data-controller="search"
   data-action="submit->search#submit"
