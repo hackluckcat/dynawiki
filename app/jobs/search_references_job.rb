@@ -17,7 +17,7 @@ class SearchReferencesJob < ApplicationJob
         break
       end
 
-      html_content = URI.open(url, read_timeout: 22)
+      html_content = URI.open(url, read_timeout: 2)
       reference = Reference.from_html(html_content:, url:)
       page.references << reference
       Turbo::StreamsChannel.broadcast_append_to(
