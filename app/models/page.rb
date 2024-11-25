@@ -9,7 +9,7 @@ class Page < ApplicationRecord
       Here is the combined content from multiple webpages:
 
       <webpage_content>
-      #{references.map(&:body)[..10_000]}
+      #{references.map(&:body)}
       </webpage_content>
 
       Your task is to create a Wiki-like article based on the following topic:
