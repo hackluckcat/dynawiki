@@ -20,12 +20,11 @@ class Page < ApplicationRecord
 
       1. Start with a brief introduction of the topic.
       2. Organize the information into logical sections with appropriate headings.
-      3. Use bullet points or numbered lists where appropriate to present information clearly.
-      4. Include any relevant historical information, cultural significance, or interesting facts.
-      5. If there are conflicting pieces of information from different sources, present the most commonly agreed-upon facts or note the discrepancies.
-      6. Summarize the key points, avoiding unnecessary details or repetition.
-      7. Use a neutral, informative tone throughout the article.
-      8. If specific locations or establishments are mentioned, you may include them in a separate section.
+      3. Include any relevant historical information, cultural significance, or interesting facts.
+      4. If there are conflicting pieces of information from different sources, present the most commonly agreed-upon facts or note the discrepancies.
+      5. Use a neutral, informative tone throughout the article.
+      6. If specific locations or establishments are mentioned, you may include them in a separate section.
+      7. Generate long long contents
 
       Do not include any citations or references to specific websites in your output. Present the information as if it's general knowledge in a Wiki format.
 
