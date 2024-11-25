@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   root "languages#index"
   get "/:code" => "languages#show", as: :language
   get "/:code/legals" => "legals#index", as: :legals
-  get "/:code/wiki/:title" => "pages#show", as: :page
+  get "/:code/wiki/:title" => "pages#show", as: :page, constraints: { title: /[^\/]+/ }
 end
